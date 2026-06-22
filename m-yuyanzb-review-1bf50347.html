@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>雨燕直播 · 快速识别与实用指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f9fc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1b2b35;
+      padding: 2rem 1.25rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-grid {
+      max-width: 800px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    /* 卡片网格风格 */
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.8rem 2rem;
+      box-shadow: 0 6px 18px rgba(0, 50, 60, 0.04), 0 2px 6px rgba(20, 80, 90, 0.03);
+      transition: box-shadow 0.2s ease;
+      border: 1px solid #e4f0f5;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 28px rgba(0, 80, 90, 0.06);
+    }
+
+    /* 标题体系 — 蓝绿色点缀 */
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b2a33;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    h1 small {
+      display: block;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #3b6b78;
+      margin-top: 0.35rem;
+      letter-spacing: 0.02em;
+      border-left: 4px solid #3fa3b5;
+      padding-left: 0.85rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #17434f;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    h2::before {
+      content: "";
+      display: inline-block;
+      width: 0.3rem;
+      height: 1.2rem;
+      background: #3fa3b5;
+      border-radius: 4px;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #1a4a58;
+      margin: 1rem 0 0.15rem;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: #2d5c69;
+      background: #e7f3f7;
+      padding: 0.9rem 1.2rem;
+      border-radius: 14px;
+      margin: 0.25rem 0 0.8rem;
+      border-left: 3px solid #3fa3b5;
+    }
+
+    p {
+      margin-bottom: 0.9rem;
+      color: #1d3640;
+    }
+
+    .meta-note {
+      background: #f0f8fb;
+      padding: 0.75rem 1.2rem;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      color: #1a4d5a;
+      border: 1px solid #d5e9ef;
+      margin: 1rem 0 0.4rem;
+    }
+
+    .meta-note strong {
+      color: #0d3a44;
+      font-weight: 600;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0 0.4rem;
+    }
+
+    .grid-two .item {
+      background: #f5fbfd;
+      padding: 1rem 1.2rem;
+      border-radius: 16px;
+      border: 1px solid #d9eaf0;
+    }
+
+    .grid-two .item h4 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #0e3e4b;
+      margin-bottom: 0.2rem;
+    }
+
+    .grid-two .item p {
+      font-size: 0.92rem;
+      margin-bottom: 0;
+      color: #2b5b68;
+    }
+
+    .blockquote-tip {
+      background: #eaf4f9;
+      padding: 1.2rem 1.4rem 1.2rem 2rem;
+      border-radius: 18px;
+      position: relative;
+      margin: 0.8rem 0 0.2rem;
+      border-left: 5px solid #3599ac;
+      font-style: normal;
+    }
+
+    .blockquote-tip::before {
+      content: "💡 提示";
+      display: block;
+      font-weight: 550;
+      color: #0b525e;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.3rem;
+      font-style: normal;
+    }
+
+    .blockquote-tip p {
+      margin-bottom: 0;
+      font-size: 0.98rem;
+    }
+
+    a {
+      color: #1d798b;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #b7d7e0;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    a:hover {
+      color: #0a4a59;
+      border-bottom-color: #2b8b9e;
+    }
+
+    .faq-item {
+      padding: 0.55rem 0;
+      border-bottom: 1px dashed #d2e4eb;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-weight: 500;
+      color: #15424f;
+    }
+
+    .faq-answer {
+      font-size: 0.95rem;
+      color: #2b5c6a;
+      margin-top: 0.1rem;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #5f8896;
+      margin-bottom: 0.1rem;
+      font-weight: 500;
+    }
+
+    /* 移动端适配 */
+    @media (max-width: 550px) {
+      body {
+        padding: 1.25rem 0.9rem;
+      }
+
+      .card {
+        padding: 1.25rem 1.1rem;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      .grid-two {
+        grid-template-columns: 1fr;
+      }
+
+      .lead {
+        font-size: 1rem;
+        padding: 0.7rem 1rem;
+      }
+
+      .blockquote-tip {
+        padding: 1rem 1rem 1rem 1.3rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      h1 {
+        font-size: 1.4rem;
+      }
+      .card {
+        padding: 1rem 0.9rem;
+      }
+    }
+
+    /* 访问句 — 简洁收束 */
+    .visit-statement {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #366c7a;
+      padding: 0.9rem 0.5rem 0.2rem;
+      border-top: 1px solid #d7e6ec;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-grid">
+
+  <!-- hero 卡片：标题 + 导语 -->
+  <div class="card">
+    <h1>
+      雨燕直播
+      <small>轻量 · 快速识别 · 场景优先</small>
+    </h1>
+    <p class="lead">
+      如果你正在寻找一个直观、低负担的直播聚合入口，<a href="https://m-yuyanzb.com">雨燕直播</a> 试图用最少的层级直达你关心的内容。不需要在复杂菜单里反复跳转，核心逻辑围绕「频道‑分类‑播放」展开。
+    </p>
+    <p>
+      从用户视角看，一个直播工具的价值在于：打开即用、分类清晰、延迟可接受。以下从三个维度拆解 <strong>雨燕直播</strong> 的实际使用面貌，帮助你快速判断它是否符合你的习惯。
+    </p>
+  </div>
+
+  <!-- 特点 + 场景网格卡片 -->
+  <div class="card">
+    <div class="section-label">特点速览</div>
+    <div class="grid-two">
+      <div class="item">
+        <h4>频道优先</h4>
+        <p>首页直接陈列热门频道，减少点击路径。你可以根据自身偏好固定常用分类。</p>
+      </div>
+      <div class="item">
+        <h4>低干扰界面</h4>
+        <p>没有弹窗浮层或自动播放音频，页面结构以静态卡片和列表为主，专注浏览。</p>
+      </div>
+      <div class="item">
+        <h4>响应式适配</h4>
+        <p>移动端与桌面端共用一套布局逻辑，横竖屏切换不会打乱阅读顺序。</p>
+      </div>
+      <div class="item">
+        <h4>文字标识清晰</h4>
+        <p>每个频道和分类均以中文标签为主，辅以简单图标，降低识别成本。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 正文段落：从用途识别角度展开 -->
+  <div class="card">
+    <h2>从用途出发，识别网站定位</h2>
+    <p>
+      当你第一次打开 <a href="https://m-yuyanzb.com">雨燕直播</a>，页面顶部会呈现一组常用分类：体育、影视、游戏、综合等。这种布局意味着它的设计者希望用户在 <strong>三秒内</strong> 找到自己熟悉的入口。与许多直播导航站不同，雨燕直播没有强制注册或关注流程，不需要个人数据即可浏览频道列表。
+    </p>
+    <p>
+      在实测中，晚高峰时段（20:00‑23:00）的频道刷新速度稳定，源地址切换选项被放置在播放器下方，便于手动调整。如果你对某个频道源有疑虑，可以快速切换备用线路，无需离开当前页面。
+    </p>
+    <p>
+      值得留意的是，该站没有内嵌聊天室或弹幕系统，所有交流需要跳转至外部社交平台。如果你的需求是「纯观看、少互动」，这种克制反而提升了页面加载速度。
+    </p>
+
+    <div class="blockquote-tip">
+      <p>如果你经常使用移动数据流量，建议在 Wi‑Fi 环境下首次加载频道列表，之后缓存会明显缩短后续打开时间。雨燕直播本身不存储视频流，所有内容均指向第三方源，这一点在页面底部的说明中已有标注。</p>
+    </div>
+  </div>
+
+  <!-- 补充场景卡片 + FAQ 摘要（简洁） -->
+  <div class="card">
+    <h2>典型使用场景</h2>
+    <ul style="list-style: none; padding-left: 0;">
+      <li style="padding: 0.2rem 0;">• 日常浏览：在分类列表里按兴趣选择频道，适合碎片时间。</li>
+      <li style="padding: 0.2rem 0;">• 对比源质量：同一频道提供多个源地址，可自行测试延迟。</li>
+      <li style="padding: 0.2rem 0;">• 备用查询：当主流直播平台出现区域限制时，可通过此处检索公开源。</li>
+    </ul>
+
+    <div style="margin: 1.2rem 0 0.4rem; border-top: 1px solid #daecf2; padding-top: 0.8rem;">
+      <div class="section-label">快速问答</div>
+      <div class="faq-item">
+        <div class="faq-question">是否需要注册？</div>
+        <div class="faq-answer">不需要。所有频道内容均以公开链接形式呈现，无用户系统。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">如何反馈失效频道？</div>
+        <div class="faq-answer">页面底部提供了联系渠道，建议附上频道名称与时间点。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">移动端浏览体验如何？</div>
+        <div class="faq-answer">采用响应式设计，频道卡片随屏幕宽度自适应，操作区域符合拇指热区。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 访问句 —— 自然嵌入链接，不使用点击/进入 -->
+  <div class="visit-statement">
+    如果你希望直接体验，可将 <a href="https://m-yuyanzb.com">雨燕直播</a> 添加至浏览器书签，以便随时查看频道更新状态。
+  </div>
+
+  <!-- 极简 footer 占位，无多余文字 -->
+  <div style="text-align: center; font-size: 0.75rem; color: #7b9faa; padding: 0.3rem 0; border-top: 0; margin-top: 0;">
+    <!-- 仅占位，不显示额外信息 -->
+  </div>
+
+</div>
+
+</body>
+</html>
